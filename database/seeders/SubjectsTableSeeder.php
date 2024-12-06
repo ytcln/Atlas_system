@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Users\Subjects;
+use Illuminate\Support\Facades\DB;
+
 
 class SubjectsTableSeeder extends Seeder
 {
@@ -16,10 +18,10 @@ class SubjectsTableSeeder extends Seeder
     public function run()
     {
         // 国語、数学、英語を追加
-        DB::table('subject')->insert([
-            ['subject' => '国語',
-            'subject' => '数学',
-            'subject' => '英語',],
+        DB::table('subjects')->insert([
+            ['subject' => '国語'],
+            ['subject' => '数学'],
+            ['subject' => '英語'],
 
         ]);
     }
