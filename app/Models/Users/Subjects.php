@@ -3,7 +3,6 @@
 namespace App\Models\Users;
 
 use Illuminate\Database\Eloquent\Model;
-
 use App\Models\Users\User;
 
 class Subjects extends Model
@@ -15,7 +14,7 @@ class Subjects extends Model
         'subject'
     ];
 
-    public function users(){
-        return;// リレーションの定義
+    public function user(){
+        return $this->belongsTo(User::class);// リレーションの定義
     }
 }
