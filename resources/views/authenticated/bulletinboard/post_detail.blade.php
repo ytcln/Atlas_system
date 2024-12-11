@@ -7,8 +7,12 @@
           <div>
           </div>
           <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}">削除</a>
+            @if(($post->user_id ==Auth::user()->id))
+            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">
+              <button type="submit" name="name" value=""class="btn btn-primary">編集</button></span>
+            <a href="{{ route('post.delete', ['id' => $post->id]) }}"onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
+              <button type="submit" name="name" value=""class="btn btn-danger">削除</button></a>
+              @endif
           </div>
         </div>
 
