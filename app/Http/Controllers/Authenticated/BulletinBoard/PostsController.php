@@ -61,7 +61,11 @@ class PostsController extends Controller
         $request->validate([
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:2000',
+        ],[
+        'post_title.required' => 'タイトルは入力必須です',
+        'post_body.required' => '投稿は入力必須です',
         ]);
+
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,

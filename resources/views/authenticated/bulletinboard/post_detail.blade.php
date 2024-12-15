@@ -65,6 +65,11 @@
         </div>
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
           <textarea placeholder="投稿内容" name="post_body" class="w-100"></textarea>
+          @if ($errors->has('post_body'))
+                <span class="post">
+                  {{$errors->first('post_body')}}
+                </span>
+                @endif
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
