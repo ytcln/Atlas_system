@@ -77,12 +77,15 @@
         <div class="search_conditions_inner">
           <div>
             <label>性別</label>
+            <div class="search_flex">
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
+            </div>
           </div>
           <div>
             <label>権限</label>
+            <div class="search_flex">
             <select name="role" form="userSearchRequest" class="engineer">
               <option selected disabled>----</option>
               <option value="1">教師(国語)</option>
@@ -90,15 +93,16 @@
               <option value="3">教師(英語)</option>
               <option value="4" class="">生徒</option>
             </select>
+            </div>
           </div>
           <div class="selected_engineer">
             <label>選択科目</label>
-            @foreach($user->subjects as $subject)
-            <div>
+            <div class="search_flex">
+            @foreach($subjects as $subject)
               <label>{{ $subject->subject }}</label>
               <input type="checkbox" name="subjects[]" value="{{ $subject->id }}">
-            </div>
             @endforeach
+          </div>
           </div>
         </div>
       </div>
