@@ -42,13 +42,11 @@
         @endif
       </div>
       <div>
-        @if($user->subject == 4)
-        <span>選択科目 :</span><span>国語</span>
-        @elseif($user->subject == 2)
-        <span>選択科目 :</span><span>数学</span>
-        @else
-        <span>選択科目 :</span><span>英語</span>
+        @foreach($user->subjects as $subject)
+        @if($user->role == 4)
+        <span>選択科目 :</span><span>{{ $subject->subject }}</span>
         @endif
+        @endforeach
       </div>
     </div>
     @endforeach

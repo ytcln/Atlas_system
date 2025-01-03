@@ -1,6 +1,7 @@
 <x-guest-layout>
   <form action="{{ route('loginPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
+      <h1><img src="{{ asset('image/atlas-black.png') }}"width="200"class=""></h1>
       <div class="border vh-50 w-25">
         <div class="w-75 m-auto pt-5">
           <label class="d-block m-0" style="font-size:13px;">メールアドレス</label>
@@ -24,7 +25,6 @@
       {{ csrf_field() }}
     </div>
   </form>
-  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="{{ asset('js/register.js') }}" rel="stylesheet"></script>
 </x-guest-layout>
