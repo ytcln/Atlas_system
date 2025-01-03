@@ -1,28 +1,30 @@
 <x-guest-layout>
-  <form action="{{ route('loginPost') }}" method="POST">
+  <form action="{{ route('loginPost') }}" method="POST" class="login-home">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <h1><img src="{{ asset('image/atlas-black.png') }}"width="200"class=""></h1>
-      <div class="border vh-50 w-25">
-        <div class="w-75 m-auto pt-5">
-          <label class="d-block m-0" style="font-size:13px;">メールアドレス</label>
-          <div class="border-bottom border-primary w-100">
-            <input type="text" class="w-100 border-0" name="mail_address">
+      <Box display="flex" flexDirection="column" >
+        <img src="{{ asset('image/atlas-black.png') }}"width="170"class="atlas-logo">
+        <div class="border vh-50 w-100">
+          <div class="w-75 m-auto pt-5">
+            <label class="d-block m-0" style="font-size:13px;">メールアドレス</label>
+            <div class="border-bottom border-primary w-100">
+              <input type="text" class="w-100 border-0" name="mail_address">
+            </div>
+          </div>
+          <div class="w-75 m-auto pt-5">
+            <label class="d-block m-0" style="font-size:13px;">パスワード</label>
+            <div class="border-bottom border-primary w-100">
+              <input type="password" class="w-100 border-0" name="password">
+            </div>
+          </div>
+          <div class="text-right m-3">
+            <input type="submit" class="btn btn-primary" value="ログイン">
+          </div>
+          <div class="text-center">
+            <a href="{{ route('registerView') }}">新規登録</a>
           </div>
         </div>
-        <div class="w-75 m-auto pt-5">
-          <label class="d-block m-0" style="font-size:13px;">パスワード</label>
-          <div class="border-bottom border-primary w-100">
-            <input type="password" class="w-100 border-0" name="password">
-          </div>
-        </div>
-        <div class="text-right m-3">
-          <input type="submit" class="btn btn-primary" value="ログイン">
-        </div>
-        <div class="text-center">
-          <a href="{{ route('registerView') }}">新規登録</a>
-        </div>
-      </div>
-      {{ csrf_field() }}
+        {{ csrf_field() }}
+      </Box>
     </div>
   </form>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
