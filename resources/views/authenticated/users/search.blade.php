@@ -42,9 +42,10 @@
         @endif
       </div>
       <div>
+        <span>選択科目 :</span>
         @foreach($user->subjects as $subject)
         @if($user->role == 4)
-        <span>選択科目 :</span><span>{{ $subject->subject }}</span>
+        <span>{{ $subject->subject }}</span>
         @endif
         @endforeach
       </div>

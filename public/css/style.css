@@ -16,6 +16,7 @@ li {
   list-style: none;
 }
 
+/* ログイン画面 */
 .login-home {
   background-color: #ecf1f7;
 }
@@ -224,6 +225,11 @@ li {
 
 .post_status span {
   font-size: 12px;
+}
+
+.input.btn.btn-primary {
+  display: block;
+  margin-left: auto;
 }
 
 /* 掲示板　カテゴリー */
