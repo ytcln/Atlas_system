@@ -21,11 +21,6 @@ li {
   background-color: #ecf1f7;
 }
 
-.border {
-  border-radius: 10px;
-  background-color: white;
-}
-
 .atlas-logo {
   margin-bottom: 50px;
 }
@@ -201,6 +196,10 @@ li {
 
 .edit-modal-btn {
   justify-content: space-between;
+}
+
+.post-form {
+  color: red;
 }
 
 /* 掲示板 コメント */

@@ -62,7 +62,7 @@ class PostsController extends Controller
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:2000',
         ],[
-        'post_title.required' => 'タイトルは入力必須です',
+        'post_title.required' => 'タイトルは100文字以内で記入してください。',
         'post_body.required' => '投稿は入力必須です',
         ]);
 
