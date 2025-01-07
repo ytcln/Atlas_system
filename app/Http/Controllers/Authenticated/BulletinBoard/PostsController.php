@@ -49,6 +49,16 @@ class PostsController extends Controller
     }
 
     public function postCreate(PostFormRequest $request){
+        $request->validate([
+            'post_category_id' => 'required',
+            'post_title' => 'required|string|max:100',
+            'post_body' => 'required|string|max:2000',
+        ],[
+        'post_category_id' => 'カテゴリーは必ず入力してください。',
+        'post_title.required' => 'タイトルは必ず入力してください。',
+        'post_body.required' => '投稿内容は必ず入力してください。',
+        ]);
+
         $post = Post::create([
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
@@ -62,8 +72,8 @@ class PostsController extends Controller
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:2000',
         ],[
-        'post_title.required' => 'タイトルは100文字以内で記入してください。',
-        'post_body.required' => '投稿は入力必須です',
+        'post_title.required' => 'タイトルは必ず入力してください。',
+        'post_body.required' => '投稿内容は必ず入力してください',
         ]);
 
         Post::where('id', $request->post_id)->update([
@@ -83,6 +93,12 @@ class PostsController extends Controller
     }
 
     public function commentCreate(Request $request){
+        $request->validate([
+            'comment' => 'required|string|max:250',
+        ],[
+        'comment.required' => 'コメントは必ず入力してください。',
+        ]);
+
         PostComment::create([
             'post_id' => $request->post_id,
             'user_id' => Auth::id(),

@@ -148,7 +148,9 @@ return [
 
     'attributes' => [
         'post_title' => 'タイトル',
-        'post_body' => '投稿',
+        'post_body' => '投稿内容',
+        'comment' => 'コメント',
+        'post_category_id' => 'カテゴリー'
     ],
 
 ];
