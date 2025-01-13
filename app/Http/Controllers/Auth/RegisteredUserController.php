@@ -46,6 +46,22 @@ class RegisteredUserController extends Controller
             $birth_day = date('Y-m-d', strtotime($data));
             $subjects = $request->subject;
 
+            $request->validate([
+            'over_name' => 'required|string|max:10',
+            'under_name' => 'required|string|max:10',
+            'over_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
+            'under_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
+            'mail_address' => 'required|email|max:100|unique:users,mail_address',
+            'sex' => 'required',
+            'birth_day' => 'required',
+            'role' => 'required',
+            'password' => 'required|min:8|max:30|confirmed',
+        ],[
+        'post_category_id' => 'カテゴリーは必ず入力してください。',
+        'post_title.required' => 'タイトルは必ず入力してください。',
+        'post_body.required' => '投稿内容は必ず入力してください。',
+        ]);
+
             $user_get = User::create([
                 'over_name' => $request->over_name,
                 'under_name' => $request->under_name,

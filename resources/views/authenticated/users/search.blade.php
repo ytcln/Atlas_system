@@ -36,13 +36,15 @@
         @elseif($user->role == 2)
         <span>権限 : </span><span>教師(数学)</span>
         @elseif($user->role == 3)
-        <span>権限 : </span><span>講師(英語)</span>
+        <span>権限 : </span><span>教師(英語)</span>
         @else
         <span>権限 : </span><span>生徒</span>
         @endif
       </div>
       <div>
+        @if($user->role == 4)
         <span>選択科目 :</span>
+        @endif
         @foreach($user->subjects as $subject)
         @if($user->role == 4)
         <span>{{ $subject->subject }}</span>
