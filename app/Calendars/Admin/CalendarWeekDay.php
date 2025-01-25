@@ -31,13 +31,19 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
+      $html[] = '<a href="'. route('calendar.admin.detail',['date'=>$ymd,'part'=>1]) .'">';
       $html[] = '<p class="day_part m-0 pt-1">1部</p>';
+      $html[] = '</a>';
     }
     if($two_part){
+      $html[] = '<a href="'. route('calendar.admin.detail',['date'=>$ymd,'part'=>2]) .'">';
       $html[] = '<p class="day_part m-0 pt-1">2部</p>';
+      $html[] = '</a>';
     }
     if($three_part){
+      $html[] = '<a href="'. route('calendar.admin.detail',['date'=>$ymd,'part'=>3]) .'">';
       $html[] = '<p class="day_part m-0 pt-1">3部</p>';
+      $html[] = '</a>';
     }
     $html[] = '</div>';
 

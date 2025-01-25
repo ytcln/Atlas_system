@@ -54,7 +54,7 @@ class PostsController extends Controller
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:2000',
         ],[
-        'post_category_id' => 'カテゴリーは必ず入力してください。',
+        'post_category_id.required' => 'カテゴリーは必ず入力してください。',
         'post_title.required' => 'タイトルは必ず入力してください。',
         'post_body.required' => '投稿内容は必ず入力してください。',
         ]);

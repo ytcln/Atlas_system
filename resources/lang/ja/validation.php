@@ -150,7 +150,16 @@ return [
         'post_title' => 'タイトル',
         'post_body' => '投稿内容',
         'comment' => 'コメント',
-        'post_category_id' => 'カテゴリー'
+        'post_category_id' => 'カテゴリー',
+        'over_name' => '名前',
+        'under_name' => '名前',
+        'over_name_kana' => '名前',
+        'under_name_kana' => '名前',
+        'mail_address' => 'メールアドレス',
+        'sex' => '性別',
+        'birth_day' => '生年月日',
+        'role' => '役職',
+        'password' => 'パスワード',
     ],
 
 ];

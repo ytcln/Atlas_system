@@ -52,14 +52,20 @@ class RegisteredUserController extends Controller
             'over_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
             'under_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
             'mail_address' => 'required|email|max:100|unique:users,mail_address',
-            'sex' => 'required',
-            'birth_day' => 'required',
-            'role' => 'required',
+            'sex' => 'required|Rule::in(["1","2","3"])',
+            'birth_day' => 'required|date|after:now|before:"2000-01-01"',
+            'role' => 'required|Rule::in(["1","2","3","4"])',
             'password' => 'required|min:8|max:30|confirmed',
         ],[
-        'post_category_id' => 'カテゴリーは必ず入力してください。',
-        'post_title.required' => 'タイトルは必ず入力してください。',
-        'post_body.required' => '投稿内容は必ず入力してください。',
+        'over_name.required' => '名前は必ず入力してください。',
+        'under_name.required' => '名前は必ず入力してください。',
+        'over_name_kana.required' => '名前は必ず入力してください。',
+        'under_name_kana.required' => '名前は必ず入力してください。',
+        'mail_address.required' => 'メールアドレスは必ず入力してください。',
+        'sex.required' => '性別は必ず選択してください。',
+        'birth_day.required' => '生年月日は必ず選択してください。',
+        'role.required' => '役職は必ず選択してください。',
+        'password.required' => 'パスワードは必ず入力してください。',
         ]);
 
             $user_get = User::create([

@@ -21,8 +21,17 @@ li {
   background-color: #ecf1f7;
 }
 
+.login-form {
+  width: 25%;
+}
+
 .atlas-logo {
-  margin-bottom: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-center {
+  margin-bottom: 20px;
 }
 
 /* サイドバー */
@@ -258,6 +267,10 @@ li {
 .sub_categories li input {
   list-style: none;
   cursor: pointer;
+}
+
+.day_part {
+  color: #007bff;
 }
 
 /* ユーザー検索 */
