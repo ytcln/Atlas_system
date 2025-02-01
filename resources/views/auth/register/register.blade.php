@@ -3,6 +3,9 @@
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
       <div class="w-25 vh-75 border p-3" style="background-color:white; border-radius:15px;">
         <div class="register_form">
+          @if($errors->first('over_name'))
+          <span class="register-form">{{ $errors->first('over_name') }}</span>
+          @endif
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
@@ -17,6 +20,10 @@
               </div>
             </div>
           </div>
+
+          @if($errors->first('under_name'))
+          <span class="register-form">{{ $errors->first('under_name') }}</span>
+          @endif
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">セイ</label>
@@ -31,6 +38,10 @@
               </div>
             </div>
           </div>
+
+          @if($errors->first('mail_address'))
+          <span class="register-form">{{ $errors->first('mail_address') }}</span>
+          @endif
           <div class="mt-3">
             <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
             <div class="border-bottom border-primary">
@@ -38,6 +49,10 @@
             </div>
           </div>
         </div>
+
+        @if($errors->first('sex'))
+          <span class="register-form">{{ $errors->first('sex') }}</span>
+          @endif
         <div class="mt-3">
           <input type="radio" name="sex" class="sex" value="1">
           <label style="font-size:13px">男性</label>
@@ -46,6 +61,10 @@
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
         </div>
+
+        @if($errors->first('birth_day'))
+          <span class="register-form">{{ $errors->first('birth_day') }}</span>
+          @endif
         <div class="mt-3">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
           <select class="old_year" name="old_year">
@@ -130,6 +149,10 @@
           </select>
           <label style="font-size:13px">日</label>
         </div>
+
+        @if($errors->first('role'))
+          <span class="register-form">{{ $errors->first('role') }}</span>
+          @endif
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">役職</label>
           <input type="radio" name="role" class="admin_role role" value="1">
@@ -150,12 +173,20 @@
           </div>
           @endforeach
         </div>
+
+        @if($errors->first('password'))
+          <span class="register-form">{{ $errors->first('password') }}</span>
+          @endif
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">パスワード</label>
           <div class="border-bottom border-primary">
             <input type="password" class="border-0 w-100 password" name="password">
           </div>
         </div>
+
+        @if($errors->first('password'))
+          <span class="register-form">{{ $errors->first('password') }}</span>
+          @endif
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
           <div class="border-bottom border-primary">
