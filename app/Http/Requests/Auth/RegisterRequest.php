@@ -46,16 +46,28 @@ class RegisterRequest extends FormRequest
             'under_name.max' => '名前は10文字以下で入力してください。',
             'over_name_kana.required' => '名前は必ず入力してください。',
             'over_name_kana.max' => '名前は10文字以下で入力してください。',
+            'over_name_kana.regex' => '名前には有効な正規表現を指定してください。',
             'under_name_kana.required' => '名前は必ず入力してください。',
             'under_name_kana.max' => '名前は10文字以下で入力してください。',
+            'under_name_kana.regex' => '名前には有効な正規表現を指定してください。',
             'mail_address.required' => 'メールアドレスは必ず入力してください。',
             'sex.required' => '性別は必ず選択してください。',
-            'birth_day.required' => '生年月日は必ず選択してください。',
+            'birth_day' => '生年月日は必ず入力してください。',
+            'birth_day.after' => '生年月日は1999-12-31より後の日付を指定してください。',
+            'birth_day.before' => '生年月日は今日より前の日付を指定してください。',
             'role.required' => '役職は必ず選択してください。',
             'password.required' => 'パスワードは必ず入力してください。',
             'password.max' => 'パスワードは30文字以下で入力してください。',
             'password.min' => 'パスワードは8文字以上で入力してください。',
             'password.confirmed' => 'パスワードと確認用パスワードが一致しません。',
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+       $data = [];
+        $data['birth_day'] = sprintf('%04d-%02d-%02d', $this->old_year, $this->old_month, $this->old_day);
+        if ($data['birth_day'] == '0000-00-00') $data['birth_day'] = null;
+        $this->merge($data);
     }
 }

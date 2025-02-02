@@ -6,6 +6,9 @@
           @if($errors->first('over_name'))
           <span class="register-form">{{ $errors->first('over_name') }}</span>
           @endif
+          @if($errors->first('under_name'))
+          <span class="register-form">{{ $errors->first('under_name') }}</span>
+          @endif
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
@@ -21,8 +24,11 @@
             </div>
           </div>
 
-          @if($errors->first('under_name'))
-          <span class="register-form">{{ $errors->first('under_name') }}</span>
+          @if($errors->first('over_name_kana'))
+          <span class="register-form">{{ $errors->first('over_name_kana') }}</span>
+          @endif
+           @if($errors->first('under_name_kana'))
+          <span class="register-form">{{ $errors->first('under_name_kana') }}</span>
           @endif
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
