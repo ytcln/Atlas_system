@@ -79,7 +79,7 @@ li {
 }
 
 .past-day {
-  background: #EEE;
+  background: #DDDD;
 }
 
 .calendar-td {
@@ -89,6 +89,15 @@ li {
 .day_part {
   color: #494949;
   font-size: 12px;
+}
+
+.day_parts {
+  font-size: 12px;
+  padding-left: 20px;
+}
+
+.text-part {
+  display: flex;
 }
 
 .adjust-table {
