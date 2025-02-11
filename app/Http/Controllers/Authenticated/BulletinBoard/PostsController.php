@@ -97,6 +97,7 @@ class PostsController extends Controller
             'comment' => 'required|string|max:250',
         ],[
         'comment.required' => 'コメントは必ず入力してください。',
+        'comment.max' => 'コメントは250文字以内で入力してください。',
         ]);
 
         PostComment::create([
