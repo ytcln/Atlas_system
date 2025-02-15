@@ -17,7 +17,6 @@ class SelectIds implements DisplayUsers{
     }else{
       $role = array($role);
     }
-
     if(is_null($keyword)){
       $users = User::with('subjects')
       ->whereIn('sex', $gender)

@@ -63,6 +63,26 @@ class UsersTableSeeder extends Seeder
             'birth_day' => '2001-6-6',
             'role' => '4',
             'password' => bcrypt(123123123),],
+
+            ['over_name' => '太田',
+            'under_name' => '智',
+            'over_name_kana' => 'オオタ',
+            'under_name_kana' => 'サトシ',
+            'mail_address' => '123456@123',
+            'sex' => '3',
+            'birth_day' => '2005-3-3',
+            'role' => '4',
+            'password' => bcrypt(abcdefgh),],
+
+            ['over_name' => '前田',
+            'under_name' => '和人',
+            'over_name_kana' => 'マエダ',
+            'under_name_kana' => 'カズト',
+            'mail_address' => '123123@12',
+            'sex' => '1',
+            'birth_day' => '2008-7-6',
+            'role' => '4',
+            'password' => bcrypt(abcde123),],
         ]);
     }
 }

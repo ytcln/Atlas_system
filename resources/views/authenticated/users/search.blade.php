@@ -101,7 +101,7 @@
             <div class="search_flex">
             @foreach($subjects as $subject)
               <label>{{ $subject->subject }}</label>
-              <input type="checkbox" name="subjects[]" value="{{ $subject->id }}">
+              <input type="checkbox" name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
             @endforeach
           </div>
           </div>
