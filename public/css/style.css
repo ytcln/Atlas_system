@@ -80,6 +80,7 @@ li {
 
 .past-day {
   background: #DDDD;
+  min-width: 100px;
 }
 
 .calendar-td {
