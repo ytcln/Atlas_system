@@ -57,18 +57,19 @@
   <div class="search_area w-25 border">
     <div class="">
       <div>
+        <label class="search_line">検索</label>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
       <div>
-        <lavel>カテゴリ</lavel>
-        <select form="userSearchRequest" name="category">
+        <label class="search_line">カテゴリ</label>
+        <select form="userSearchRequest" name="category" class="search_form">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
         </select>
       </div>
       <div>
-        <label>並び替え</label>
-        <select name="updown" form="userSearchRequest">
+        <label class="search_line">並び替え</label>
+        <select name="updown" form="userSearchRequest" class="search_form">
           <option value="ASC">昇順</option>
           <option value="DESC">降順</option>
         </select>
@@ -108,10 +109,10 @@
         </div>
       </div>
       <div>
-        <input type="reset" value="リセット" form="userSearchRequest">
+        <input type="submit" name="search_btn" value="検索" form="userSearchRequest" class="search_btn1">
+      <div class="srh-btn">
+        <input type="reset" value="リセット" form="userSearchRequest" class="search_btn2">
       </div>
-      <div>
-        <input type="submit" name="search_btn" value="検索" form="userSearchRequest">
       </div>
     </div>
     <form action="{{ route('user.show') }}" method="get" id="userSearchRequest"></form>

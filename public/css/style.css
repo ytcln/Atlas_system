@@ -38,6 +38,21 @@ li {
   color: red;
 }
 
+.old_year {
+  border: none;
+  border-bottom: 1px solid #007bff;
+}
+
+.old_month {
+  border: none;
+  border-bottom: 1px solid #007bff;
+}
+
+.old_day {
+  border: none;
+  border-bottom: 1px solid #007bff;
+}
+
 /* サイドバー */
 .sidebar {
   width: 170px;
@@ -65,6 +80,11 @@ li {
   background: #FFF;
 }
 
+.my-profile {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 /* スクール予約関連 */
 .day-blank {
   background: #D3D3D3;
@@ -80,7 +100,6 @@ li {
 
 .past-day {
   background: #DDDD;
-  min-width: 100px;
 }
 
 .calendar-td {
@@ -115,6 +134,10 @@ li {
 
 .adjust-table-btn {
   width: 70%;
+}
+
+.time-part {
+  font-size: 18px;
 }
 
 /* モーダル */
@@ -268,13 +291,28 @@ li {
   color: #FFF;
 }
 
-.category_btn {
+.category_btn1 {
   font-size: 12px;
   border-radius: 5px;
   padding: 0 5px;
   border: none;
   background: #999;
   color: #FFF;
+  width: 132px;
+  height: 30px;
+  background-color: #FF69B4;
+}
+
+.category_btn2 {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 0 5px;
+  border: none;
+  background: #999;
+  color: #FFF;
+  width: 132px;
+  height: 30px;
+  background-color: #9ACD32;
 }
 
 .main_categories span,
@@ -285,6 +323,56 @@ li {
 
 .day_part {
   color: #007bff;
+}
+
+.post-btn {
+  font-size: 12px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+  height: 30px;
+  background-color: #7B68EE;
+  padding: 5px;
+}
+
+.post-btn2 {
+  color: #FFF;
+}
+
+.search-btn {
+  margin-bottom: 15px;
+}
+
+.search-btn2 {
+  border-radius: 5px;
+  border: 2px solid #DEE2E6;
+  background-color: #ECF1F6;
+  height: 30px;
+  font-size: 12px;
+  width: 70%;
+}
+
+.search-btn3 {
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  background: #999;
+  color: #FFF;
+  width: 28%;
+  height: 30px;
+  background-color: #7B68EE;
+}
+
+.subcategory {
+  margin-top: 40px;
+}
+
+.other_area {
+  margin-top: 50px;
+}
+
+.category_search {
+  margin-top: 20px;
 }
 
 /* ユーザー検索 */
@@ -326,4 +414,50 @@ li {
 
 .subject_inner {
   display: none;
+}
+
+.search_line {
+  display: block;
+}
+
+.free_word {
+  border-radius: 5px;
+  border: none;
+  background-color: #dcdcdc;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.search_form {
+  border-radius: 5px;
+  border: none;
+  background-color: #dcdcdc;
+  width: 25%;
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.search_area {
+  margin-top: 40px;
+}
+
+.search_btn1 {
+  background-color: #7B68EE;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  color: #FFF;
+  border: none;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.search_btn2 {
+  border: none;
+  color: #007bff;
+  margin-top: 20px;
+  margin-left: 100px;
 }

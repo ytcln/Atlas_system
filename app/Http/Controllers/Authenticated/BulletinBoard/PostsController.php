@@ -45,7 +45,9 @@ class PostsController extends Controller
 
     public function postInput(){
         $main_categories = MainCategory::get();
-        return view('authenticated.bulletinboard.post_create', compact('main_categories'));
+        $sub_categories = SubCategory::get();
+
+        return view('authenticated.bulletinboard.post_create', compact('main_categories','sub_categories',));
     }
 
     public function postCreate(PostFormRequest $request){
@@ -86,7 +88,29 @@ class PostsController extends Controller
         return redirect()->route('post.show');
     }
     public function mainCategoryCreate(Request $request){
+        $request->validate([
+            'main_category_name' => 'required|string|max:100|unique:main_categories,main_category,',
+        ],[
+        'main_category_name.required' => 'メインカテゴリーは必ず入力してください。',
+        'main_category_name.max' => 'メインカテゴリーは100文字以内で入力してください。',
+        'main_category_name.unique' => 'このメインカテゴリーは既に登録されています。',
+        ]);
         MainCategory::create(['main_category' => $request->main_category_name]);
+        return redirect()->route('post.input');
+    }
+
+    public function subCategoryCreate(Request $request){
+         $request->validate([
+            'sub_category_name' => 'required|string|max:100|unique:sub_categories,sub_category,',
+            'main_category_id' => 'required|confirmed',
+        ],[
+        'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
+        'sub_category_name.max' => 'サブカテゴリーは100文字以内で入力してください。',
+        'sub_category_name.unique' => 'このサブカテゴリーは既に登録されています。',
+        'main_category_id.required' => 'メインカテゴリーは必ず入力してください。',
+        ]);
+
+        SubCategory::create(['sub_category' => $request->sub_category_name,'main_category_id' => $request->main_category_id]);
         return redirect()->route('post.input');
     }
 

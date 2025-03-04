@@ -59,13 +59,19 @@
         @if($errors->first('sex'))
           <span class="register-form">{{ $errors->first('sex') }}</span>
           @endif
-        <div class="mt-3">
-          <input type="radio" name="sex" class="sex" value="1">
-          <label style="font-size:13px">男性</label>
-          <input type="radio" name="sex" class="sex" value="2">
-          <label style="font-size:13px">女性</label>
-          <input type="radio" name="sex" class="sex" value="3">
-          <label style="font-size:13px">その他</label>
+        <div class="mt-3 d-flex" style="justify-content:space-around">
+          <div class="gender">
+            <input type="radio" name="sex" class="sex" value="1">
+            <label style="font-size:13px">男性</label>
+          </div>
+          <div class="gender">
+            <input type="radio" name="sex" class="sex" value="2">
+            <label style="font-size:13px">女性</label>
+          </div>
+          <div class="gender">
+            <input type="radio" name="sex" class="sex" value="3">
+            <label style="font-size:13px">その他</label>
+          </div>
         </div>
 
         @if($errors->first('birth_day'))
@@ -73,6 +79,7 @@
           @endif
         <div class="mt-3">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
+          <div class="birthday d-flex" style="justify-content:space-around">
           <select class="old_year" name="old_year">
             <option value="none">-----</option>
             <option value="1985">1985</option>
@@ -154,6 +161,7 @@
             <option value="31">31</option>
           </select>
           <label style="font-size:13px">日</label>
+          </div>
         </div>
 
         @if($errors->first('role'))
@@ -161,14 +169,24 @@
           @endif
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">役職</label>
+          <div class="role d-flex" style="justify-content:space-around">
+            <div>
           <input type="radio" name="role" class="admin_role role" value="1">
           <label style="font-size:13px">教師(国語)</label>
+          </div>
+          <div>
           <input type="radio" name="role" class="admin_role role" value="2">
           <label style="font-size:13px">教師(数学)</label>
+          </div>
+          <div>
           <input type="radio" name="role" class="admin_role role" value="3">
           <label style="font-size:13px">教師(英語)</label>
+          </div>
+          <div>
           <input type="radio" name="role" class="other_role role" value="4">
           <label style="font-size:13px" class="other_role">生徒</label>
+          </div>
+          </div>
         </div>
         <div class="select_teacher d-none">
           <label class="d-block m-0" style="font-size:13px">選択科目</label>

@@ -160,6 +160,8 @@ return [
         'birth_day' => '生年月日',
         'role' => '役職',
         'password' => 'パスワード',
+        'main_category_name' => 'メインカテゴリー名',
+        'sub_category_name' => 'サブカテゴリー名',
     ],
 
 ];
