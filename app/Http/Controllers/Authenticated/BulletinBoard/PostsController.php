@@ -107,7 +107,7 @@ class PostsController extends Controller
         'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
         'sub_category_name.max' => 'サブカテゴリーは100文字以内で入力してください。',
         'sub_category_name.unique' => 'このサブカテゴリーは既に登録されています。',
-        'main_category_id.required' => 'メインカテゴリーは必ず入力してください。',
+        'main_category_id.required' => 'メインカテゴリーは必ず選択してください。',
         ]);
 
         SubCategory::create(['sub_category' => $request->sub_category_name,'main_category_id' => $request->main_category_id]);

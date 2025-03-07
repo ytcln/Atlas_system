@@ -47,6 +47,10 @@
       </div>
       <!-- サブカテゴリー追加 -->
        <div class="subcategory">
+        @if($errors->first('main_category_id'))
+        <span class="error_message">{{ $errors->first('main_category_id') }}</span><br>
+        @endif
+
         @if($errors->first('sub_category_name'))
         <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
         @endif
