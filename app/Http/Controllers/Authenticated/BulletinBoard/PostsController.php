@@ -51,19 +51,17 @@ class PostsController extends Controller
     }
 
     public function postCreate(PostFormRequest $request){
-        $request->validate([
-            'post_title' => 'required|string|max:100',
-            'post_body' => 'required|string|max:2000',
-        ],[
-        'post_title.required' => 'タイトルは必ず入力してください。',
-        'post_body.required' => '投稿内容は必ず入力してください。',
-        ]);
 
         $post = Post::create([
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
-            'post' => $request->post_body
+            'post' => $request->post_body,
         ]);
+
+        // サブカテゴリーとの関連付け
+        $post = Post::findOrFail($post->id);
+        $post->subCategories()->attach($request->post_category_id);
+
         return redirect()->route('post.show');
     }
 
@@ -168,4 +166,5 @@ class PostsController extends Controller
 
         return response()->json();
     }
+
 }

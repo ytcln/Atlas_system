@@ -2,14 +2,17 @@
 <div class="post_create_container d-flex">
   <div class="post_create_area border w-50 m-5 p-5">
     <div class="">
+      @if($errors->first('post_category_id'))
+      <span class="error_message">{{ $errors->first('post_category_id') }}</span>
+      @endif
       <p class="mb-0">カテゴリー</p>
       <select class="w-100" form="postCreate" name="post_category_id">
         <option value="">---</option>
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}">
         <!-- サブカテゴリー表示 -->
-         @foreach($sub_categories as $sub_category)
-         <option label="{{ $sub_category->sub_category }}"></option>
+         @foreach($main_category->subCategories as $sub_category)
+         <option label="{{ $sub_category->sub_category }}" value="{{$sub_category->id}}"></option>
         </optgroup>
         @endforeach
         @endforeach
@@ -35,6 +38,7 @@
     <form action="{{ route('post.create') }}" method="post" id="postCreate">{{ csrf_field() }}</form>
   </div>
   @can('admin')
+
   <div class="w-25 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
       <div class="">

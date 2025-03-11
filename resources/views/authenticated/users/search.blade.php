@@ -1,5 +1,5 @@
 <x-sidebar>
-<p>ユーザー検索</p>
+
 <div class="search_content w-100 border d-flex">
   <div class="reserve_users_area">
     @foreach($users as $user)
@@ -74,7 +74,7 @@
           <option value="DESC">降順</option>
         </select>
       </div>
-      <div class="">
+      <div class="search-space">
         <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
         <div class="search_conditions_inner">
           <div>
