@@ -11,6 +11,9 @@
                 </span>
                 @endif
           <div>
+            @foreach($post->subCategories as $sub_category)
+            <span class="subcategory-btn">{{ $sub_category->sub_category }}</span>
+            @endforeach
           </div>
           <div>
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">
@@ -22,7 +25,7 @@
         </div>
 
         <div class="contributor d-flex">
-          <p>
+          <p class=""style="font-size:15px">
             <span>{{ $post->user->over_name }}</span>
             <span>{{ $post->user->under_name }}</span>
             さん
