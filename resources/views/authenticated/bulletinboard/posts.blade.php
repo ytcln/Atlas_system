@@ -4,8 +4,8 @@
     <p class="w-75 m-auto"></p>
     @foreach($posts as $post)
     <div class="post_area border w-75 m-auto p-3">
-      <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
-      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
+      <p class="contributor1"><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
+      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}"class="posts-title">{{ $post->post_title }}</a></p>
       @foreach($post->subCategories as $sub_category)
       <span class="subcategory-btn">{{ $sub_category->sub_category }}</span>
       @endforeach

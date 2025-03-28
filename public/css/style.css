@@ -101,7 +101,7 @@ li {
 }
 
 .past-day {
-  background: #DDDD;
+  background: #f2f2f2;
 }
 
 .calendar-td {
@@ -168,6 +168,21 @@ li {
   width: 60%;
 }
 
+/* モーダル（カレンダー） */
+.modal__calender {
+  background: #fff;
+  left: 50%;
+  padding: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.modal-space {
+  padding-bottom: 15px;
+}
+
 /* 掲示板 */
 /*.sub_categories {
   display: none;
@@ -219,12 +234,17 @@ li {
   font-weight: bold;
 }
 
+.contributor1 {
+  color: #999;
+  font-weight: bold;
+}
+
 .detsail_post_title {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .detsail_post {
-  font-size: 12px;
+  font-size: 15px;
   color: #9E9E9E;
 }
 
@@ -248,6 +268,11 @@ li {
 
 .post-form {
   color: red;
+}
+
+.posts-title {
+  color: black;
+  font-weight: bold;
 }
 
 /* 掲示板 コメント */
@@ -392,7 +417,6 @@ li {
   height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
   border-radius: 5px;
 }
 
@@ -403,14 +427,40 @@ li {
 .one_person {
   width: 250px;
   height: 250px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 8px gray;
+  border-radius: 10px;
+  margin: 5px;
 }
+
 
 .search_conditions span {
   cursor: pointer;
+  position: relative;
 }
 
 .search_conditions_inner {
   display: none;
+}
+
+.search_conditions span::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px black;
+  transform: rotate(135deg);
+  /*最初の矢印は下向き*/
+  border-right: solid 2px black;
+  margin-left: 130px;
+}
+
+.search_conditions span.open::after {
+  top: 45%;
+  transform: rotate(-45deg);
+  /*矢印を上向きに変える*/
 }
 
 .subject_edit_btn {
@@ -458,6 +508,7 @@ li {
 
 .search_area {
   margin-top: 40px;
+  margin-right: 40px;
 }
 
 .search_btn1 {
