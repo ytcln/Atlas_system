@@ -5,6 +5,8 @@ $(function () {
     var reserve_time = $(this).attr('reserve_time');
     $('.modal-space-day span').text(reserve_day);
     $('.modal-space-time span').text(reserve_time);
+    $('.edit-modal-day').val(reserve_day);
+    $('.edit-modal-part').val(reserve_time);
     return false;
   });
   $('.js-modal-close').on('click', function () {

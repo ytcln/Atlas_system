@@ -12,7 +12,7 @@
       <div class="post_bottom_area d-flex" style="justify-content:right">
         <div class="d-flex post_status">
           <div class="mr-5">
-            <i class="fa fa-comment" ></i><span class="">{{ $post->postComments->count() }}</span>
+            <i class="fa fa-comment"></i><span class="">{{ $post->postComments->count() }}</span>
           </div>
           <div>
             @if(Auth::user()->is_Like($post->id))
@@ -28,8 +28,8 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
-    <div class="border m-4">
+  <div class="other_area w-25">
+    <div class=" m-4">
       <div class="post-btn"><a href="{{ route('post.input') }}" class="post-btn2">投稿</a></div>
       <div class="search-btn">
         <input type="text" placeholder="キーワードを検索" name="keyword" class="search-btn2" form="postSearchRequest">
@@ -44,9 +44,7 @@
         <li class="main_categories" category_id="{{ $category->id }}"><span>{{ $category->main_category }}<span></li>
         @foreach($category->subCategories as $sub_category)
         <li class="sub_categories" category_id="{{ $sub_category->id }}">
-          <span>
-            <input type="submit" name="category_word" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
-          <span>
+          <span><input type="submit" name="category_word" value="{{ $sub_category->sub_category }}" style="border:none;font-size:14px;" form="postSearchRequest"><span>
         </li>
         @endforeach
         @endforeach

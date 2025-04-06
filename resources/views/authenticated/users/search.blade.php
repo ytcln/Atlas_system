@@ -1,6 +1,6 @@
 <x-sidebar>
 
-<div class="search_content w-100 border d-flex">
+<div class="search_content w-100 d-flex">
   <div class="reserve_users_area">
     @foreach($users as $user)
     <div class="one_person">
@@ -54,7 +54,7 @@
     </div>
     @endforeach
   </div>
-  <div class="search_area w-25 border">
+  <div class="search_area w-25">
     <div class="">
       <div>
         <label class="search_line" style="font-size:20px">検索</label>
@@ -78,7 +78,7 @@
         <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
         <div class="search_conditions_inner">
           <div>
-            <label>性別</label>
+            <label style="margin-top:10px">性別</label>
             <div class="search_flex">
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">

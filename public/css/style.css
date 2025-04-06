@@ -122,9 +122,9 @@ li {
   display: flex;
 }
 
-.adjust-table {
+/* .adjust-table {
   width: 70% !important;
-}
+} */
 
 .adjust-table td {
   padding: 0 !important;
@@ -184,10 +184,6 @@ li {
 }
 
 /* 掲示板 */
-/*.sub_categories {
-  display: none;
-}*/
-
 .post_create_area {
   background: #FFF;
   border-radius: 10px;
@@ -225,6 +221,10 @@ li {
 .error_message {
   font-size: 12px;
   color: red;
+}
+
+.fa-comment {
+  color: #969696;
 }
 
 /* 掲示板 詳細画面 */
@@ -325,7 +325,7 @@ li {
   border: none;
   background: #999;
   color: #FFF;
-  width: 131px;
+  width: 49%;
   height: 30px;
   background-color: #FF69B4;
 }
@@ -337,7 +337,7 @@ li {
   border: none;
   background: #999;
   color: #FFF;
-  width: 131px;
+  width: 49%;
   height: 30px;
   background-color: #9ACD32;
 }
@@ -395,6 +395,7 @@ li {
 
 .other_area {
   margin-top: 50px;
+  margin-right: 40px;
 }
 
 .category_search {
@@ -406,6 +407,40 @@ li {
   color: #FFF;
   background-color: #03AAD2;
   padding: 5px;
+}
+
+.sub_categories {
+  display: none;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-bottom: 1px solid #969696;
+  width: 75%;
+}
+
+.main_categories {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #969696;
+  width: 100%;
+}
+
+.main_categories::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px black;
+  transform: rotate(135deg);
+  /*最初の矢印は下向き*/
+  border-right: solid 2px black;
+  margin-top: 5px;
+}
+
+.main_categories.open::after {
+  transform: rotate(-45deg);
+  /*矢印を上向きに変える*/
 }
 
 /* ユーザー検索 */
@@ -435,16 +470,18 @@ li {
 }
 
 
-.search_conditions span {
+.search_conditions {
   cursor: pointer;
   position: relative;
+  border-bottom: 1px solid #969696;
+  width: 75%;
 }
 
 .search_conditions_inner {
   display: none;
 }
 
-.search_conditions span::after {
+.search_conditions::after {
   content: "";
   position: absolute;
   top: 45%;
@@ -454,10 +491,10 @@ li {
   transform: rotate(135deg);
   /*最初の矢印は下向き*/
   border-right: solid 2px black;
-  margin-left: 130px;
+  margin-left: 110px;
 }
 
-.search_conditions span.open::after {
+.search_conditions.open::after {
   top: 45%;
   transform: rotate(-45deg);
   /*矢印を上向きに変える*/
@@ -467,6 +504,25 @@ li {
   font-size: 16px;
   color: #0000FF;
   cursor: pointer;
+  position: relative;
+}
+
+.subject_edit_btn::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px black;
+  transform: rotate(135deg);
+  /*最初の矢印は下向き*/
+  border-right: solid 2px black;
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+.subject_edit_btn.open::after {
+  transform: rotate(-45deg);
+  /*矢印を上向きに変える*/
 }
 
 .subject_inner {
@@ -513,7 +569,7 @@ li {
 
 .search_btn1 {
   background-color: #03AAD2;
-  width: 80%;
+  width: 75%;
   height: 40px;
   border-radius: 5px;
   color: #FFF;
@@ -526,7 +582,7 @@ li {
   border: none;
   color: #007bff;
   margin-top: 20px;
-  margin-left: 100px;
+  width: 75%;
 }
 
 .search-space {
@@ -537,10 +593,24 @@ li {
   background-color: #dcdcdc;
   border-radius: 5px;
   height: 30px;
+  padding: 5px;
 }
 
 .search_flex {
   margin-bottom: 10px;
 }
 
-/* アコーディオンメニュー */
+/*　スクール予約(詳細ページ) */
+table td {
+  background: #fff;
+}
+
+table .text-center:nth-child(odd) td {
+  background: #ddf1f4
+}
+
+.detail-user {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: #fff;
+}

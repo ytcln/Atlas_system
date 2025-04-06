@@ -18,20 +18,24 @@
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__calender">
     <div class="w-100">
-      <div class="modal-space-day w-50 m-auto">
-        <p>予約日：<span id="reserve_day"></span></p>
-      </div>
-      <div class="modal-space-time w-50 m-auto">
-        <p>時間：<span id="reserve_time"></span></span></p>
-      </div>
-      <div class="modal-space-cancel w-50 m-auto">
-        <p><span>上記の予約をキャンセルしてもよろしいですか？</span></p>
-      </div>
-      <div class="w-50 m-auto edit-modal-btn d-flex">
-        <a class="js-modal-close btn btn-primary d-inline-block" href="">閉じる</a>
-        <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
-        <input type="submit" class="btn btn-danger d-block" value="キャンセル">
-      </div>
+      <form action="{{ route('deleteParts') }}" method="POST">
+        <div class="modal-space-day w-50 m-auto">
+          <p>予約日：<span id="reserve_day"></span></p>
+        </div>
+        <div class="modal-space-time w-50 m-auto">
+          <p>時間：<span id="reserve_time"></span></span></p>
+        </div>
+        <div class="modal-space-cancel w-50 m-auto">
+          <p><span>上記の予約をキャンセルしてもよろしいですか？</span></p>
+        </div>
+        <div class="w-50 m-auto edit-modal-btn d-flex">
+          <a class="js-modal-close btn btn-primary d-inline-block" href="">閉じる</a>
+          <input type="hidden" class="edit-modal-day" name="getDate" value="" form="deleteParts">
+          <input type="hidden" class="edit-modal-part" name="getPart" value="" form="deleteParts">
+          <input type="submit" class="btn btn-danger d-block" value="キャンセル" form="deleteParts">
+        </div>
+        {{ csrf_field() }}
+      </form>
     </div>
   </div>
 </div>
