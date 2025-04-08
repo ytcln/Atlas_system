@@ -101,7 +101,7 @@ li {
 }
 
 .past-day {
-  background: #f2f2f2;
+  background: #e6e6e6;
 }
 
 .calendar-td {
@@ -127,7 +127,7 @@ li {
 } */
 
 .adjust-table td {
-  padding: 0 !important;
+  padding: .25rem !important;
 }
 
 .adjust-area p {
