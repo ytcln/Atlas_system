@@ -30,7 +30,7 @@
       <div class="mb-2">
         <span>生年月日 : </span><span>{{ $user->birth_day }}</span>
       </div>
-      <div>
+      <div class="mb-2">
         @if($user->role == 1)
         <span>権限 : </span><span>教師(国語)</span>
         @elseif($user->role == 2)

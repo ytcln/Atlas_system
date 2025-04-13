@@ -34,9 +34,13 @@ li {
   margin-bottom: 20px;
 }
 
+.text-register {
+  text-align: center;
+}
 
 .register-form {
   color: red;
+  font-size: 10px;
 }
 
 .old_year {
@@ -57,10 +61,10 @@ li {
 /* サイドバー */
 .sidebar {
   width: 180px;
-  height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
   padding-top: 20px;
+  min-height: 100vh;
 }
 
 .main-container {
@@ -92,11 +96,11 @@ li {
   background: #D3D3D3;
 }
 
-.day-sat {
+.day-sat1 {
   color: #0000FF;
 }
 
-.day-sun {
+.day-sun1 {
   color: #FF0000;
 }
 
@@ -140,6 +144,38 @@ li {
 
 .time-part {
   font-size: 18px;
+}
+
+table .past-day:nth-of-type(7n+6) p.day {
+  color: #0000FF;
+}
+
+table .past-day:nth-of-type(7n) p.day {
+  color: #FF0000;
+}
+
+table .past-day:nth-of-type(7n+6) div.day {
+  color: #0000FF;
+}
+
+table .past-day:nth-of-type(7n) div.day {
+  color: #FF0000;
+}
+
+table .day-sat:nth-of-type(7n+6) p.day {
+  color: #0000FF;
+}
+
+table .day-sun:nth-of-type(7n) p.day {
+  color: #FF0000;
+}
+
+table .day-sat:nth-of-type(7n+6) div.day {
+  color: #0000FF;
+}
+
+table .day-sun:nth-of-type(7n) div.day {
+  color: #FF0000;
 }
 
 /* モーダル */
@@ -349,7 +385,7 @@ li {
 }
 
 .day_part {
-  color: #007bff;
+  color: #0000FF;
 }
 
 .post-btn {
@@ -447,12 +483,12 @@ li {
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 75%;
   margin: 10px auto;
-  height: 80vh;
   overflow: scroll;
   padding: 10px;
   border-radius: 5px;
+  gap: 5px;
 }
 
 .reserve_users_area span {
@@ -460,13 +496,14 @@ li {
 }
 
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 23%;
+  height: 240px;
   background: #fff;
   padding: 1rem;
   box-shadow: 0 0 8px gray;
   border-radius: 10px;
   margin: 5px;
+  overflow: scroll;
 }
 
 

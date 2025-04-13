@@ -1,7 +1,7 @@
 <x-guest-layout>
   <form action="{{ route('registerPost') }}" method="POST" class="login-home">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3" style="background-color:white; border-radius:15px;">
+      <div class="w-25 vh-75 border p-3" style="background-color:#fff; border-radius:15px;">
         <div class="register_form">
           @if($errors->first('over_name'))
           <span class="register-form">{{ $errors->first('over_name') }}</span>
@@ -9,7 +9,7 @@
           @if($errors->first('under_name'))
           <span class="register-form">{{ $errors->first('under_name') }}</span>
           @endif
-          <div class="d-flex mt-3" style="justify-content:space-between">
+          <div class="d-flex mt-2" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
               <div class="border-bottom border-primary" style="width:140px;">
@@ -217,10 +217,10 @@
             <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
-        <div class="mt-5 text-right">
+        <div class="mt-3 text-right">
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
-        <div class="text-center">
+        <div class="text-register">
           <a href="{{ route('login') }}">ログインはこちら</a>
         </div>
       </div>
