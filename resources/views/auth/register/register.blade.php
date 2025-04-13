@@ -1,7 +1,7 @@
 <x-guest-layout>
   <form action="{{ route('registerPost') }}" method="POST" class="login-home">
-    <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3" style="background-color:#fff; border-radius:15px;">
+    <div class="w-100 d-flex pt-5 pb-5" style="align-items:center; justify-content:center; min-height:100vh;">
+      <div class="w-25 border p-3" style="background-color:#fff; border-radius:15px;">
         <div class="register_form">
           @if($errors->first('over_name'))
           <span class="register-form">{{ $errors->first('over_name') }}</span>
