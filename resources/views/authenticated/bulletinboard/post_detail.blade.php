@@ -20,8 +20,8 @@
               <button type="submit" name="name" value=""class="btn btn-primary">編集</button></span>
             <a href="{{ route('post.delete', ['id' => $post->id]) }}"onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
               <button type="submit" name="name" value=""class="btn btn-danger">削除</button></a>
-              @endif
-          </div>
+            </div>
+            @endif
         </div>
 
         <div class="contributor d-flex">
